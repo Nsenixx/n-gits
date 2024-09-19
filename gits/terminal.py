@@ -90,7 +90,7 @@ class Terminal:
         self._outbuf = ''
 
         with open(path.join(path.dirname(__file__), 'linux_console.yml')) as f:
-            sequences = yaml.load(f.read())
+            sequences = yaml.load(f.read(), Loader=yaml.Loader)
 
         self.control_characters = sequences['control_characters']
 
